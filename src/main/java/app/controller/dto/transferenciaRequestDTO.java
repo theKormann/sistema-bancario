@@ -2,9 +2,8 @@ package app.controller.dto;
 
 import java.math.BigDecimal;
 
-public record transferenciaRequestDTO (
+public record TransferenciaRequestDTO(
         String idOrigem,
         String idDestino,
         BigDecimal valor
-)
-{}
+) {}
