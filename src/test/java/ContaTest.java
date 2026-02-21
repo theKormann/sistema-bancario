@@ -1,5 +1,5 @@
 import domain.Conta;
-import exception.SaldoInsuficienteException;
+import domain.exception.SaldoInsuficienteException;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.*;

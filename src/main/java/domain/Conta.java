@@ -1,7 +1,7 @@
 package domain;
 
 import java.math.BigDecimal;
-import exception.SaldoInsuficienteException;
+import domain.exception.SaldoInsuficienteException;
 
 public class Conta {
 
