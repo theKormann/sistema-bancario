@@ -1,0 +1,4 @@
+CREATE TABLE conta (
+    id VARCHAR(255) PRIMARY KEY,
+    saldo DECIMAL(19, 2) NOT NULL
+);

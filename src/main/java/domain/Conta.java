@@ -2,13 +2,22 @@ package domain;
 
 import java.math.BigDecimal;
 import domain.exception.SaldoInsuficienteException;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "conta")
 public class Conta {
 
+    @Id
     private String id;
 
     private String contaOrigem;
     private String contaDestino;
+
+    protected Conta() {
+    }
 
     public Conta(String id){
         this.id = id;
