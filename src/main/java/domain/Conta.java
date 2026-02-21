@@ -7,6 +7,9 @@ public class Conta {
 
     private String id;
 
+    private String contaOrigem;
+    private String contaDestino;
+
     public Conta(String id){
         this.id = id;
     }
@@ -16,6 +19,7 @@ public class Conta {
     }
 
     private BigDecimal saldo = BigDecimal.ZERO;
+
     public BigDecimal getSaldo() {
         return saldo;
     }
@@ -39,4 +43,12 @@ public class Conta {
         saldo = saldo.subtract(valor);
     }
 
+    public void transferir(Conta contaDestino, BigDecimal valor){
+        if(contaDestino == null){
+            throw new IllegalArgumentException("A conta de destino não é valida.");
+        }
+
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
 }

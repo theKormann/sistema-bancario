@@ -55,4 +55,20 @@ class ContaTest {
             conta.depositar(null);
         });
     }
+
+    @Test
+    void deveTransferirValorComSucessoEntreDuasContas() {
+        // Arrange (Preparação: Criamos duas contas e colocamos R$ 100 na conta de origem)
+        Conta contaOrigem = new Conta("123");
+        contaOrigem.depositar(new BigDecimal("100.00"));
+
+        Conta contaDestino = new Conta("456");
+
+        // Act (Ação: Transferimos R$ 40 da origem para o destino)
+        contaOrigem.transferir(contaDestino, new BigDecimal("40.00"));
+
+        // Assert (Verificação: A origem deve ficar com 60 e o destino com 40)
+        assertEquals(new BigDecimal("60.00"), contaOrigem.getSaldo());
+        assertEquals(new BigDecimal("40.00"), contaDestino.getSaldo());
+    }
 }
